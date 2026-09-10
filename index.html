@@ -983,7 +983,7 @@ function escapeHtml(s){
    a checker that cries wolf stops being read.
    ============================================================ */
 const TRAPS = [
-{re:/\b(need|needs|needed|want|wants|wanted|try|tries|tried|hope|hopes|hoped|decide|decides|decided|learn|learns|learned)\s+(practi[cs]e|learn|study|speak|improve|work|go|do|make|get|find|know|understand|write|read|talk|buy|take|see|use|start|finish|travel|live|change)\b/gi,
+{re:/\b(need|needs|needed|want|wants|wanted|try|tries|tried|hope|hopes|hoped|decide|decides|decided|learn|learns|learned|prefer|prefers|preferred|plan|plans|planned|expect|expects|expected|promise|promises|promised|agree|agrees|agreed|manage|manages|managed|refuse|refuses|refused|offer|offers|offered|choose|chooses|chose)\s+(practi[cs]e|learn|study|speak|improve|work|go|do|make|get|find|know|understand|write|read|talk|buy|take|see|use|start|finish|travel|live|change)\b/gi,
  msg:"Falta el <b>to</b> entre los dos verbos.", fix:"need TO practise"},
 {re:/\b(said|says|say)\s+(me|him|her|us|them)\b/gi,
  msg:"Con persona se usa <b>tell</b>, no <b>say</b>.", fix:"told me"},
@@ -1051,6 +1051,22 @@ const TRAPS = [
  msg:"<b>sensible</b> = sensato. «Sensible» es <b>sensitive</b>.", fix:"sensitive"}
 ];
 
+/* Misspellings driven by Spanish: doubled consonants that are single in
+   Spanish, and single ones that should be doubled. */
+const SPELL = {
+  preffer:"prefer", prefered:"preferred", awnser:"answer", awnsers:"answers", awnswer:"answer", awnswers:"answers",
+  ejample:"example", becouse:"because", becuase:"because", diferent:"different",
+  recomend:"recommend", recomendation:"recommendation", comunication:"communication",
+  comunicate:"communicate", posible:"possible", profesional:"professional",
+  necesary:"necessary", neccesary:"necessary", responsability:"responsibility",
+  oportunity:"opportunity", inteligent:"intelligent", acomodation:"accommodation",
+  adress:"address", comited:"committed", experiencie:"experience", carrer:"career",
+  aproximately:"approximately", diferences:"differences", inmediately:"immediately",
+  sucess:"success", sucessful:"successful", enviroment:"environment",
+  developement:"development", independant:"independent", recieve:"receive",
+  wich:"which", trough:"through", allways:"always", diary:"daily"
+};
+
 function localCheck(text){
   const hits = [], seen = {};
   TRAPS.forEach(function(t){
@@ -1064,6 +1080,13 @@ function localCheck(text){
         hits.push({found:found, msg:t.msg, fix:t.fix, soft:!!t.soft});
       }
       if(m.index === t.re.lastIndex) t.re.lastIndex++;
+    }
+  });
+  const seenWord = {};
+  String(text).toLowerCase().replace(/[^a-z']+/g," ").split(" ").forEach(function(w){
+    if(SPELL[w] && !seenWord[w]){
+      seenWord[w] = 1;
+      hits.push({found:w, msg:"Ortografía.", fix:SPELL[w], soft:false});
     }
   });
   return hits;
