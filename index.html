@@ -246,6 +246,7 @@ ul.ex li em{font-style:normal;font-weight:600;color:var(--accent)}
 /* ---------- claude feedback ---------- */
 .fbox{border:1px solid var(--accent);background:var(--accent-soft);border-radius:3px;padding:16px;display:flex;flex-direction:column;gap:12px}
 .fbox .corrected{font-size:15px;line-height:1.65}
+.fbox.local{border-color:var(--amber);background:var(--amber-soft)}
 .note{display:flex;gap:10px;font-size:14px;padding:8px 0;border-top:1px dotted var(--rule)}
 .note .x{color:var(--wrong);text-decoration:line-through;white-space:nowrap}
 .note .v{color:var(--right);font-weight:600;white-space:nowrap}
@@ -977,6 +978,152 @@ function escapeHtml(s){
 }
 
 /* ============================================================
+   OFFLINE CHECKER — the traps a Spanish speaker actually falls into.
+   Works with no network and no Claude. High precision on purpose:
+   a checker that cries wolf stops being read.
+   ============================================================ */
+const TRAPS = [
+{re:/\b(need|needs|needed|want|wants|wanted|try|tries|tried|hope|hopes|hoped|decide|decides|decided|learn|learns|learned)\s+(practi[cs]e|learn|study|speak|improve|work|go|do|make|get|find|know|understand|write|read|talk|buy|take|see|use|start|finish|travel|live|change)\b/gi,
+ msg:"Falta el <b>to</b> entre los dos verbos.", fix:"need TO practise"},
+{re:/\b(said|says|say)\s+(me|him|her|us|them)\b/gi,
+ msg:"Con persona se usa <b>tell</b>, no <b>say</b>.", fix:"told me"},
+{re:/\bexplain\s+(me|him|her|us|them)\b/gi,
+ msg:"<b>explain</b> lleva <b>to</b> delante de la persona.", fix:"explain TO me"},
+{re:/\bsince\s+(a|one|two|three|four|five|six|seven|eight|nine|ten|\d+)\s+(year|month|week|day|hour)s?\b/gi,
+ msg:"Con duración va <b>for</b>; <b>since</b> es para un punto de inicio.", fix:"for two years"},
+{re:/\bi\s+(am|'m)\s+agree\b/gi,
+ msg:"<b>agree</b> ya es el verbo, no lleva <b>be</b>.", fix:"I agree"},
+{re:/\bpeople\s+(is|was|has)\b/gi,
+ msg:"<b>people</b> es plural.", fix:"people are / were / have"},
+{re:/\ban?\s+(information|advice|news|software|hardware|equipment|feedback|knowledge|research|furniture|luggage|homework|progress)\b/gi,
+ msg:"Incontable: no lleva <b>a/an</b>.", fix:"some + nombre"},
+{re:/\b(informations|advices|softwares|equipments|feedbacks|knowledges|furnitures|luggages|homeworks|peoples)\b/gi,
+ msg:"Esta palabra no tiene plural en inglés.", fix:"sin -s"},
+{re:/\bi\s+have\s+\d+\s+years?\b/gi,
+ msg:"La edad va con <b>be</b>, no con <b>have</b>.", fix:"I'm 24 years old"},
+{re:/\b(is|are|was|were)\s+use\s+(for|to|in|with)\b/gi,
+ msg:"Pasiva incompleta: falta la <b>-d</b>.", fix:"is used for"},
+{re:/\bhow\s+(i|you|he|she|we|they)\s+(know|can|do|say|make|use)\b/gi,
+ msg:"En pregunta hace falta el auxiliar y el orden cambia.", fix:"how DO I know"},
+{re:/\bmore\s+(better|easier|worse|bigger|faster|higher|older|younger|cheaper|harder)\b/gi,
+ msg:"Comparativo doble: o <b>more</b> o <b>-er</b>, no los dos.", fix:"better"},
+{re:/\bdepends?\s+of\b/gi,
+ msg:"Es <b>depend on</b>.", fix:"depends on"},
+{re:/\b(he|she|it)\s+(don't|do not)\b/gi,
+ msg:"Tercera persona: <b>doesn't</b>.", fix:"he doesn't"},
+{re:/\b(he|she|it)\s+have\b/gi,
+ msg:"Tercera persona: <b>has</b>.", fix:"he has"},
+{re:/\b(i|we|they|you)\s+has\b/gi,
+ msg:"<b>has</b> es solo para he / she / it.", fix:"I have"},
+{re:/\bdoesn'?t\s+[a-z]+s\b/gi,
+ msg:"Tras <b>doesn't</b> el verbo va sin <b>-s</b>.", fix:"doesn't work"},
+{re:/\bin\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/gi,
+ msg:"Con días se usa <b>on</b>.", fix:"on Monday"},
+{re:/\b(at|in)\s+the\s+night\b/gi,
+ msg:"Se dice <b>at night</b>, sin artículo.", fix:"at night"},
+{re:/\bin\s+internet\b/gi,
+ msg:"Es <b>on the internet</b>.", fix:"on the internet"},
+{re:/\bdo\s+a\s+(decision|call|mistake)\b/gi,
+ msg:"Estas van con <b>make</b>.", fix:"make a decision"},
+{re:/\bmake\s+(the\s+)?(homework|housework)\b/gi,
+ msg:"Estas van con <b>do</b>.", fix:"do the homework"},
+{re:/\bborrow\s+(me|him|her|us|them)\b/gi,
+ msg:"Si tú das, es <b>lend</b>; <b>borrow</b> es recibir.", fix:"lend me"},
+{re:/\bthere\s+(have|has)\b/gi,
+ msg:"«Hay» es <b>there is / there are</b>.", fix:"there is"},
+{re:/\ban?\s+other\b/gi,
+ msg:"Se escribe junto.", fix:"another"},
+{re:/\bthe\s+english\s+(?!language|test|exam|teacher|course|class|people|word|version)/gi,
+ msg:"Los idiomas no llevan <b>the</b>.", fix:"English is..."},
+{re:/(^|[.!?]\s+)(is|are|was|were)\s+(very|important|difficult|possible|necessary|easy|hard|better)\b/gi,
+ msg:"Falta el sujeto: el inglés siempre necesita uno.", fix:"IT is difficult"},
+{re:/\bgram[a\u00e1]tical\b|\bgramatica\b/gi,
+ msg:"El sustantivo es <b>grammar</b>; <b>grammatical</b> es el adjetivo.", fix:"grammar"},
+{re:/\bassist\s+to\b/gi,
+ msg:"«Asistir a» es <b>attend</b>; <b>assist</b> es ayudar.", fix:"attend the meeting"},
+{re:/\bactually\b/gi, soft:1,
+ msg:"Ojo: <b>actually</b> = en realidad. Si querías «actualmente», es <b>currently</b>.", fix:"currently"},
+{re:/\bevery\s+time\b/gi, soft:1,
+ msg:"<b>every time</b> = cada vez que. Para «siempre», <b>all the time</b> o <b>every day</b>.", fix:"all the time"},
+{re:/\beventually\b/gi, soft:1,
+ msg:"<b>eventually</b> = finalmente. «Eventualmente» es <b>possibly</b>.", fix:"possibly"},
+{re:/\bsensible\b/gi, soft:1,
+ msg:"<b>sensible</b> = sensato. «Sensible» es <b>sensitive</b>.", fix:"sensitive"}
+];
+
+function localCheck(text){
+  const hits = [], seen = {};
+  TRAPS.forEach(function(t){
+    t.re.lastIndex = 0;
+    let m;
+    while((m = t.re.exec(text)) !== null){
+      const found = m[0].trim();
+      const key = found.toLowerCase() + "|" + t.fix;
+      if(!seen[key]){
+        seen[key] = 1;
+        hits.push({found:found, msg:t.msg, fix:t.fix, soft:!!t.soft});
+      }
+      if(m.index === t.re.lastIndex) t.re.lastIndex++;
+    }
+  });
+  return hits;
+}
+
+function claudePrompt(task, text){
+  return "Corrígeme este texto en inglés. Soy hispanohablante de nivel B1 y quiero llegar a B2. "+
+         "Dame el texto corregido, y después cada error con la regla explicada en español.\n\n"+
+         "TAREA: " + task + "\n\nMI TEXTO:\n" + text;
+}
+
+function renderLocal(box, task, text){
+  const hits = localCheck(text);
+  const wrap = el("div","fbox local");
+  wrap.appendChild(el("div","eyebrow","quick check · no necesita conexión"));
+  if(!hits.length){
+    wrap.appendChild(el("div","muted","Ninguno de tus fallos habituales aparece aquí. Esto solo mira patrones concretos: que no salte nada no quiere decir que esté perfecto."));
+  }else{
+    const hard = hits.filter(function(h){return !h.soft;}).length;
+    wrap.appendChild(el("div","muted", hard ? (hard + (hard===1?" cosa que revisar":" cosas que revisar") + (hits.length>hard ? " y algún aviso" : "")) : "Solo avisos, nada claramente mal."));
+    hits.forEach(function(h){
+      const r = el("div","note");
+      r.appendChild(el("span", h.soft ? "v" : "x", escapeHtml(h.found)));
+      r.appendChild(el("span","v", escapeHtml(h.fix)));
+      r.appendChild(el("span","w", h.msg));
+      wrap.appendChild(r);
+    });
+  }
+  if(!sampleFn){
+    const bar = el("div","row");
+    bar.style.marginTop = "4px";
+    const cp = el("button","btn ghost","Copy it for Claude");
+    cp.onclick = function(){
+      const payload = claudePrompt(task, text);
+      const done = function(){
+        cp.textContent = "Copied — now paste it to Claude";
+        setTimeout(function(){ cp.textContent = "Copy it for Claude"; }, 3000);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(payload).then(done, function(){ fallbackCopy(payload, done); });
+      }else{ fallbackCopy(payload, done); }
+    };
+    bar.appendChild(cp);
+    bar.appendChild(el("span","muted","Para la corrección completa, pégalo en Claude."));
+    wrap.appendChild(bar);
+  }
+  box.appendChild(wrap);
+}
+
+function fallbackCopy(txt, done){
+  const ta = document.createElement("textarea");
+  ta.value = txt;
+  ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try{ document.execCommand("copy"); done(); }catch(e){}
+  document.body.removeChild(ta);
+}
+
+/* ============================================================
    VIEWS
    ============================================================ */
 const VIEWS = [
@@ -1065,7 +1212,7 @@ function viewToday(m){
 
   m.appendChild(el("hr","rule"));
   m.appendChild(el("div","eyebrow","the honest part"));
-  m.appendChild(el("p",null,"Cambiar el móvil al inglés no te va a subir de nivel: reconoces «Settings» y poco más. Lo que mueve la aguja es <b>producir</b> — hablar y escribir — y que alguien te corrija. Por eso los bloques de hablar y escribir son los que llevan corrección de verdad, y el de escuchar es el que hace el trabajo silencioso."));
+  m.appendChild(el("p",null,"Cambiar el móvil al inglés no te va a subir de nivel: reconoces «Settings» y poco más. Lo que mueve la aguja es <b>producir</b> — hablar y escribir — y que alguien te corrija. Por eso los bloques de hablar y escribir son los que llevan corrección, y el de escuchar es el que hace el trabajo silencioso. El <b>quick check</b> funciona siempre, sin conexión; la corrección completa solo cuando abres esto dentro de Claude."));
   m.appendChild(el("p","muted","Si algún día solo tienes cinco minutos, haz el de hablar. Es el que se evalúa en una entrevista."));
 }
 
@@ -1204,7 +1351,14 @@ function viewSpeak(m){
       const v = ta.value.trim();
       if(v.length < 12){ box.innerHTML = '<div class="warn">Escribe al menos una frase entera antes de pedir corrección.</div>'; return; }
       chk.disabled = true;
-      await checkEnglish("Respuesta hablada a: " + item.p, v, box);
+      box.innerHTML = "";
+      renderLocal(box, item.p, v);
+      if(sampleFn){
+        const deep = el("div","");
+        deep.style.marginTop = "12px";
+        box.appendChild(deep);
+        await checkEnglish("Respuesta hablada a: " + item.p, v, deep);
+      }
       chk.disabled = false;
       done++;
       S.speakDone = (S.speakDone||0)+1;
@@ -1265,7 +1419,14 @@ function viewWrite(m){
       const v = ta.value.trim();
       if(v.length < 20){ box.innerHTML = '<div class="warn">Escribe un poco más — con dos frases no hay nada que corregir.</div>'; return; }
       chk.disabled = true;
-      await checkEnglish(item.p, v, box);
+      box.innerHTML = "";
+      renderLocal(box, item.p, v);
+      if(sampleFn){
+        const deep = el("div","");
+        deep.style.marginTop = "12px";
+        box.appendChild(deep);
+        await checkEnglish(item.p, v, deep);
+      }
       chk.disabled = false;
       S.writeDone = (S.writeDone||0)+1;
       save();
