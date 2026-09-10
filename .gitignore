@@ -1,0 +1,16 @@
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# AI tooling — never publish
+.claude/
+CLAUDE.md

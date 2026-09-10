@@ -1,0 +1,1499 @@
+<title>English Reps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+<style>
+:root{
+  --ground:#EFEFEA;
+  --surface:#FFFFFF;
+  --surface-2:#F6F6F2;
+  --ink:#1A2233;
+  --muted:#5E6675;
+  --faint:#8A909C;
+  --rule:#D9D9D2;
+  --rule-soft:#E7E7E1;
+  --accent:#1E3A6E;
+  --accent-soft:#E4E9F3;
+  --on-accent:#FFFFFF;
+  --wrong:#B23A2F;
+  --wrong-soft:#F7E6E3;
+  --right:#2F6B4F;
+  --right-soft:#E3EFE8;
+  --amber:#8A6212;
+  --amber-soft:#F4ECDA;
+
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#141821;
+    --surface:#1C2130;
+    --surface-2:#232937;
+    --ink:#E9EAE6;
+    --muted:#9BA3B2;
+    --faint:#78808F;
+    --rule:#2E3546;
+    --rule-soft:#262C3A;
+    --accent:#8FAEE0;
+    --accent-soft:#232C3F;
+    --on-accent:#141821;
+    --wrong:#E89A8E;
+    --wrong-soft:#332422;
+    --right:#84C7A2;
+    --right-soft:#1F2E28;
+    --amber:#D8AC4E;
+    --amber-soft:#2E2820;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#141821;
+  --surface:#1C2130;
+  --surface-2:#232937;
+  --ink:#E9EAE6;
+  --muted:#9BA3B2;
+  --faint:#78808F;
+  --rule:#2E3546;
+  --rule-soft:#262C3A;
+  --accent:#8FAEE0;
+  --accent-soft:#232C3F;
+  --on-accent:#141821;
+  --wrong:#E89A8E;
+  --wrong-soft:#332422;
+  --right:#84C7A2;
+  --right-soft:#1F2E28;
+  --amber:#D8AC4E;
+  --amber-soft:#2E2820;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+
+/* ---------- header ---------- */
+header{padding-block:30px 18px}
+.masthead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(30px,6vw,42px);
+  font-weight:600;
+  line-height:1;
+  margin:0;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+}
+.sub{font-size:13px;color:var(--muted);margin-top:6px;max-width:52ch}
+.streak{
+  display:flex;align-items:baseline;gap:8px;
+  border:1px solid var(--rule);background:var(--surface);
+  padding:8px 14px;border-radius:2px;white-space:nowrap;
+}
+.streak b{font-family:var(--mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums;line-height:1}
+.streak span{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+
+/* ---------- nav ---------- */
+nav{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-block:22px 26px;
+  padding-bottom:18px;border-bottom:2px solid var(--ink);
+}
+nav button{
+  font-family:var(--sans);font-size:13px;font-weight:500;
+  letter-spacing:.02em;
+  padding:7px 14px;border:1px solid var(--rule);
+  background:var(--surface);color:var(--muted);
+  border-radius:2px;cursor:pointer;
+  transition:background .12s,color .12s,border-color .12s;
+}
+nav button:hover{color:var(--ink);border-color:var(--faint)}
+nav button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- generic ---------- */
+h2{font-family:var(--serif);font-size:25px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em;text-wrap:balance}
+h3{font-family:var(--sans);font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 12px;max-width:66ch}
+.lead{color:var(--muted);font-size:14px;margin-bottom:24px;max-width:64ch}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--faint);margin-bottom:8px;
+}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:20px}
+.stack{display:flex;flex-direction:column;gap:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.spacer{flex:1}
+hr.rule{border:0;border-top:1px solid var(--rule-soft);margin:26px 0}
+.section-view[hidden]{display:none!important}
+
+/* ---------- buttons ---------- */
+button.btn{
+  font-family:var(--sans);font-size:14px;font-weight:500;
+  padding:9px 16px;border-radius:2px;cursor:pointer;
+  border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);
+  transition:opacity .12s;
+}
+button.btn:hover{opacity:.88}
+button.btn.ghost{background:transparent;color:var(--accent);border-color:var(--rule)}
+button.btn.ghost:hover{border-color:var(--accent)}
+button.btn:disabled{opacity:.45;cursor:default}
+button.mini{
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  padding:5px 10px;background:transparent;color:var(--muted);
+  border:1px solid var(--rule);border-radius:2px;cursor:pointer;
+}
+button.mini:hover{color:var(--ink);border-color:var(--faint)}
+
+input[type=text],textarea{
+  font-family:var(--sans);font-size:15px;color:var(--ink);
+  background:var(--surface-2);border:1px solid var(--rule);
+  border-radius:2px;padding:10px 12px;width:100%;
+}
+textarea{min-height:140px;line-height:1.6;resize:vertical}
+input[type=text]:focus,textarea:focus{border-color:var(--accent);outline:none}
+label.fld{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+
+/* ---------- today ---------- */
+.blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:8px}
+.block{
+  border:1px solid var(--rule);background:var(--surface);
+  border-radius:3px;padding:16px;
+  display:flex;flex-direction:column;gap:8px;
+  text-align:left;cursor:pointer;font:inherit;color:inherit;
+}
+.block:hover{border-color:var(--accent)}
+.block .min{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+.block .ttl{font-family:var(--serif);font-size:20px;font-weight:600}
+.block .why{font-size:13px;color:var(--muted);line-height:1.45}
+.block .state{
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  margin-top:auto;padding-top:6px;color:var(--faint);
+}
+.block[data-done="1"]{background:var(--right-soft);border-color:var(--right)}
+.block[data-done="1"] .state{color:var(--right)}
+
+.tally{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.tally div{background:var(--surface);padding:12px 14px}
+.tally b{display:block;font-family:var(--mono);font-size:20px;font-weight:500;font-variant-numeric:tabular-nums}
+.tally span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* ---------- grammar / dictionary ---------- */
+.entry{border-bottom:1px solid var(--rule-soft);padding:16px 0}
+.entry:last-child{border-bottom:0}
+.entry summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.entry summary::-webkit-details-marker{display:none}
+.headword{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:-.01em}
+.pos{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--faint)}
+.seen{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--right);margin-left:auto}
+.entry .body{padding-top:12px;display:flex;flex-direction:column;gap:12px}
+.rule-txt{font-size:15px;max-width:64ch}
+.es-note{
+  font-family:var(--serif);font-style:italic;font-size:15px;
+  color:var(--muted);border-left:2px solid var(--accent);
+  padding-left:12px;max-width:62ch;
+}
+ul.ex{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+ul.ex li{font-size:15px;padding-left:20px;position:relative;max-width:64ch}
+ul.ex li::before{position:absolute;left:0;font-family:var(--mono);font-size:13px}
+ul.ex li.ok::before{content:"✓";color:var(--right)}
+ul.ex li.no::before{content:"✗";color:var(--wrong)}
+ul.ex li.no{color:var(--muted)}
+ul.ex li em{font-style:normal;font-weight:600;color:var(--accent)}
+.drill{background:var(--surface-2);border:1px solid var(--rule-soft);border-radius:2px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.drill .q{font-size:15px}
+.drill .q b{font-family:var(--mono);font-weight:500;background:var(--accent-soft);padding:1px 8px;border-radius:2px}
+.drill .fb{font-size:14px;min-height:1.4em}
+.fb.good{color:var(--right)}
+.fb.bad{color:var(--wrong)}
+.drill input{max-width:240px}
+
+/* ---------- dictation / diff ---------- */
+.diff{font-family:var(--mono);font-size:14px;line-height:2;word-spacing:.1em}
+.diff .keep{color:var(--ink)}
+.diff .miss{background:var(--right-soft);color:var(--right);padding:2px 4px;border-radius:2px}
+.diff .extra{background:var(--wrong-soft);color:var(--wrong);padding:2px 4px;border-radius:2px;text-decoration:line-through}
+.score{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.04em}
+.ctx-tag{
+  font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;
+  padding:3px 8px;border:1px solid var(--rule);border-radius:2px;color:var(--muted);
+}
+
+/* ---------- reading ---------- */
+.reader{font-family:var(--serif);font-size:18px;line-height:1.7;max-width:62ch}
+.reader p{margin:0 0 14px;max-width:none}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 20px}
+.gloss div{font-size:14px;padding:4px 0;border-bottom:1px dotted var(--rule)}
+.gloss b{font-weight:600}
+.gloss i{font-style:italic;color:var(--muted)}
+
+/* ---------- interview ---------- */
+.qa{border-left:2px solid var(--rule);padding-left:16px;margin-bottom:22px}
+.qa .q{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:8px}
+.qa .a{font-size:15px;line-height:1.65;max-width:64ch;margin-bottom:10px}
+.qa .a strong{color:var(--accent);font-weight:600}
+.qa .meta{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
+
+/* ---------- claude feedback ---------- */
+.fbox{border:1px solid var(--accent);background:var(--accent-soft);border-radius:3px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.fbox .corrected{font-size:15px;line-height:1.65}
+.note{display:flex;gap:10px;font-size:14px;padding:8px 0;border-top:1px dotted var(--rule)}
+.note .x{color:var(--wrong);text-decoration:line-through;white-space:nowrap}
+.note .v{color:var(--right);font-weight:600;white-space:nowrap}
+.note .w{color:var(--muted);flex:1;min-width:140px}
+.thinking{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.thinking::after{content:"";animation:dots 1.4s steps(4,end) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.warn{font-size:13px;color:var(--amber);background:var(--amber-soft);border:1px solid var(--amber);border-radius:2px;padding:10px 12px}
+.muted{color:var(--muted);font-size:13px}
+.mono{font-family:var(--mono)}
+@media(max-width:520px){
+  .wrap{padding-inline:16px}
+  nav button{font-size:12px;padding:6px 11px}
+}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="masthead">
+    <div>
+      <h1>English Reps</h1>
+      <div class="sub">Práctica diaria para pasar de B1 a B2. Interfaz en inglés a propósito; las explicaciones en español, que es donde está el contraste.</div>
+    </div>
+    <div class="streak"><b id="streakN">0</b><span>day<br>streak</span></div>
+  </div>
+</header>
+
+<nav id="nav"></nav>
+
+<main id="main"></main>
+</div>
+
+<script>
+"use strict";
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+/* --- Grammar: the confusables that break Spanish speakers --- */
+const CONFUSABLES = [
+{
+  id:"another", head:"another / other / any other", pos:"det.",
+  rule:"<em>another</em> es singular y nunca lleva artículo. <em>other</em> es plural, o va acompañado de the / my / some. <em>any other</em> aparece en preguntas, negativas y comparaciones.",
+  es:"Regla rápida: si es singular y sin «the», es <b>another</b>. Si es plural, <b>other</b>.",
+  ex:[
+    {ok:1,t:"Can I have <em>another</em> coffee? (uno más)"},
+    {ok:1,t:"<em>Other</em> companies pay better. (plural)"},
+    {ok:1,t:"One offer is in Madrid, <em>the other</em> is in Boadilla."},
+    {ok:1,t:"It's faster than <em>any other</em> laptop."},
+    {ok:0,t:"I need <s>other</s> ticket. → I need <em>another</em> ticket."}
+  ],
+  drills:[
+    {q:"I don't like this one. Show me ___ one.", a:["another"]},
+    {q:"___ people were waiting outside.", a:["other"]},
+    {q:"Is there ___ way to fix it?", a:["any other"]},
+    {q:"I have two brothers. One is a nurse, ___ is a driver.", a:["the other"]}
+  ]
+},
+{
+  id:"needto", head:"need to / have to / want to", pos:"verb.",
+  rule:"Después de <em>need</em>, <em>have</em>, <em>want</em>, <em>try</em>, <em>decide</em>, <em>hope</em> y <em>learn</em>, el verbo siguiente lleva SIEMPRE <em>to</em>.",
+  es:"En español «necesito practicar» no lleva nada entre los dos verbos. En inglés siempre va <b>to</b>. Excepción: los modales (can, must, should, will, may) nunca lo llevan.",
+  ex:[
+    {ok:1,t:"I need <em>to</em> practise every day."},
+    {ok:1,t:"I have <em>to</em> work tomorrow."},
+    {ok:1,t:"I must go. / I can speak Spanish. (modal: sin «to»)"},
+    {ok:0,t:"I need <s>practice</s> my English. → I need <em>to practise</em> my English."}
+  ],
+  drills:[
+    {q:"I want ___ learn English for work.", a:["to"]},
+    {q:"You should ___ (nothing / to) rest.  → escribe «nothing» o «to»", a:["nothing","-","nada"]},
+    {q:"She decided ___ apply for the job.", a:["to"]}
+  ]
+},
+{
+  id:"reflex", head:"myself / yourself / himself", pos:"pron.",
+  rule:"Cuando el sujeto y el objeto son la misma persona, el inglés usa un pronombre reflexivo completo: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves.",
+  es:"El español usa «me / te / se» delante del verbo. El inglés lo pone detrás y con palabra propia: <i>me obligo</i> → <b>I force myself</b>.",
+  ex:[
+    {ok:1,t:"I taught <em>myself</em> Python. (aprendí solo)"},
+    {ok:1,t:"Force <em>yourself</em> to speak out loud."},
+    {ok:1,t:"The system restarts <em>itself</em> at night."},
+    {ok:0,t:"I force <s>me</s> to study. → I force <em>myself</em> to study."}
+  ],
+  drills:[
+    {q:"He fixed the printer ___ .", a:["himself","by himself"]},
+    {q:"We introduced ___ to the new team.", a:["ourselves"]},
+    {q:"Did you do it ___ ?", a:["yourself","by yourself"]}
+  ]
+},
+{
+  id:"saytell", head:"say / tell / speak / talk", pos:"verb.",
+  rule:"<em>say</em> + algo. <em>tell</em> + a alguien (+ algo). <em>speak / talk</em> + to somebody. <em>speak</em> + un idioma.",
+  es:"En español «decir» sirve para todo. En inglés la diferencia es si mencionas a la persona: si la mencionas, <b>tell</b>; si no, <b>say</b>.",
+  ex:[
+    {ok:1,t:"He <em>told me</em> the truth."},
+    {ok:1,t:"He <em>said</em> it was urgent."},
+    {ok:1,t:"I need to <em>talk to</em> my manager."},
+    {ok:1,t:"I <em>speak</em> Spanish and some English."},
+    {ok:0,t:"He <s>said me</s> the truth. → He <em>told me</em> the truth."}
+  ],
+  drills:[
+    {q:"Can you ___ me your name, please?", a:["tell"]},
+    {q:"She ___ that the server was down.", a:["said"]},
+    {q:"I'd like to ___ to the manager.", a:["speak","talk"]}
+  ]
+},
+{
+  id:"makedo", head:"make / do", pos:"verb.",
+  rule:"<em>do</em> = tareas, trabajo, obligaciones y cosas indefinidas. <em>make</em> = crear, producir o fabricar algo nuevo.",
+  es:"Los dos son «hacer». Se aprenden por colocación, no por lógica: <b>do</b> the work, the homework, a course, business, research, a favour. <b>make</b> a decision, a mistake, a call, money, progress, an appointment, sure.",
+  ex:[
+    {ok:1,t:"I <em>made</em> a mistake in the configuration."},
+    {ok:1,t:"Please <em>make sure</em> you back up your files."},
+    {ok:1,t:"I <em>do</em> the maintenance every Friday."},
+    {ok:0,t:"I <s>did</s> a mistake. → I <em>made</em> a mistake."}
+  ],
+  drills:[
+    {q:"We need to ___ a decision today.", a:["make"]},
+    {q:"Could you ___ me a favour?", a:["do"]},
+    {q:"The team is ___ good progress.", a:["making"]}
+  ]
+},
+{
+  id:"forsince", head:"for / since / ago", pos:"prep.",
+  rule:"<em>for</em> + duración. <em>since</em> + punto de inicio. <em>ago</em> + cantidad de tiempo hacia atrás, y siempre con pasado simple.",
+  es:"«Desde hace dos años» = <b>for two years</b>, no «since two years». «Desde 2024» = <b>since 2024</b>. «Hace dos años» = <b>two years ago</b>.",
+  ex:[
+    {ok:1,t:"I've worked here <em>for</em> six months."},
+    {ok:1,t:"I've worked here <em>since</em> March."},
+    {ok:1,t:"I finished the course two months <em>ago</em>."},
+    {ok:0,t:"I work here <s>since two years</s>. → I've worked here <em>for two years</em>."}
+  ],
+  drills:[
+    {q:"I've been living in Madrid ___ 2019.", a:["since"]},
+    {q:"She has been in IT ___ five years.", a:["for"]},
+    {q:"I sent the email ten minutes ___ .", a:["ago"]}
+  ]
+},
+{
+  id:"perfect", head:"present perfect / past simple", pos:"tense.",
+  rule:"Pasado simple = tiempo TERMINADO y normalmente dicho (yesterday, in 2025, last month). Present perfect = tiempo no terminado, sin fecha, o con efecto en el presente.",
+  es:"El error clásico del español: aquí usamos el pretérito perfecto por costumbre regional. En inglés no es costumbre, es regla. Si dices <b>cuándo</b> y ya acabó → past simple. Si no lo dices, o sigue siendo verdad → present perfect. Nunca «I have worked there <s>yesterday</s>».",
+  ex:[
+    {ok:1,t:"I <em>worked</em> at the university in 2025. (terminado)"},
+    {ok:1,t:"I <em>have worked</em> in IT support for two years. (sigue)"},
+    {ok:1,t:"I <em>have already sent</em> the report. (efecto ahora)"},
+    {ok:0,t:"I <s>have finished</s> the course last year. → I <em>finished</em> it last year."}
+  ],
+  drills:[
+    {q:"I ___ (start) working there in March.", a:["started"]},
+    {q:"I ___ (work) there since March.", a:["have worked","'ve worked","have been working"]},
+    {q:"___ you ever ___ (use) Linux at work?  → escribe solo el verbo", a:["used"]}
+  ]
+},
+{
+  id:"continuous", head:"present simple / present continuous", pos:"tense.",
+  rule:"Present simple = hábito o situación permanente. Present continuous = ahora mismo o una etapa temporal. Los verbos de estado (know, want, need, like, believe, understand) no van en continuous.",
+  es:"«Trabajo en Madrid» (mi empleo) = <b>I work in Madrid</b>. «Estoy trabajando en un script» (ahora) = <b>I'm working on a script</b>. Y ojo: para «llevo aquí desde 2026» NO se usa el continuous simple, sino <b>I've been working here since 2026</b>.",
+  ex:[
+    {ok:1,t:"I <em>work</em> for a real-estate agency. (empleo)"},
+    {ok:1,t:"I'<em>m learning</em> English at the moment. (etapa)"},
+    {ok:0,t:"I <s>am knowing</s> the answer. → I <em>know</em> the answer."},
+    {ok:0,t:"I <s>am working</s> here since March. → I'<em>ve been working</em> here since March."}
+  ],
+  drills:[
+    {q:"Right now I ___ (fix) a laptop.", a:["am fixing","'m fixing","m fixing"]},
+    {q:"I usually ___ (start) at nine.", a:["start"]},
+    {q:"I ___ (want) to improve my English.", a:["want"]}
+  ]
+},
+{
+  id:"gerund", head:"-ing / to + verb", pos:"verb.",
+  rule:"Después de <em>enjoy, finish, avoid, practise, mind, suggest, keep, spend time</em> → verbo en -ing. Después de <em>want, need, decide, hope, learn, would like, plan</em> → to + verbo. Después de CUALQUIER preposición → -ing.",
+  es:"La regla que más rinde: después de preposición (in, at, of, for, about, by, without) siempre -ing. <i>Interesado en aprender</i> → <b>interested in learning</b>, nunca «in learn».",
+  ex:[
+    {ok:1,t:"I'm interested <em>in learning</em> more about networks."},
+    {ok:1,t:"I'm good <em>at solving</em> problems under pressure."},
+    {ok:1,t:"I enjoy <em>working</em> with people."},
+    {ok:1,t:"I decided <em>to study</em> a higher-level course."},
+    {ok:0,t:"Thanks for <s>help</s> me. → Thanks for <em>helping</em> me."}
+  ],
+  drills:[
+    {q:"I'm looking forward to ___ (hear) from you.", a:["hearing"]},
+    {q:"I've finished ___ (install) the updates.", a:["installing"]},
+    {q:"I hope ___ (get) the job.", a:["to get"]}
+  ]
+},
+{
+  id:"there", head:"there is / there are", pos:"struct.",
+  rule:"«Hay» siempre se traduce con <em>there is</em> (singular) o <em>there are</em> (plural). Nunca con <em>have</em>.",
+  es:"<b>have</b> es posesión: yo tengo. <b>there is/are</b> es existencia: hay. Son cosas distintas aunque en español se parezcan.",
+  ex:[
+    {ok:1,t:"<em>There are</em> three servers in the rack."},
+    {ok:1,t:"<em>Is there</em> a problem with the network?"},
+    {ok:0,t:"<s>Have</s> a problem with the printer. → <em>There is</em> a problem with the printer."}
+  ],
+  drills:[
+    {q:"___ ___ two tickets waiting. (plural)", a:["there are"]},
+    {q:"___ ___ any coffee left? (pregunta, singular)", a:["is there"]}
+  ]
+},
+{
+  id:"uncount", head:"information / advice / news", pos:"noun.",
+  rule:"Son incontables: no llevan <em>a/an</em> y no tienen plural — information, advice, software, hardware, equipment, feedback, knowledge, research, work, money, furniture, luggage, progress. <em>news</em> es singular. <em>people</em> es plural.",
+  es:"«Una información» no existe: <b>a piece of information</b> o <b>some information</b>. Y «la gente es» → <b>people are</b>, en plural.",
+  ex:[
+    {ok:1,t:"I need <em>some information</em> about the role."},
+    {ok:1,t:"Thanks for <em>your feedback</em>."},
+    {ok:1,t:"The news <em>is</em> good. / <em>People are</em> waiting."},
+    {ok:0,t:"He gave me <s>an advice</s>. → He gave me <em>some advice</em>."}
+  ],
+  drills:[
+    {q:"Can you give me some ___ ? (consejo)", a:["advice"]},
+    {q:"People ___ (be) waiting at reception.", a:["are"]},
+    {q:"The equipment ___ (be) already installed.", a:["is"]}
+  ]
+},
+{
+  id:"stillyet", head:"still / yet / already", pos:"adv.",
+  rule:"<em>still</em> = sigue pasando, va en medio. <em>yet</em> = todavía no / ¿ya?, va al final y solo en negativas y preguntas. <em>already</em> = antes de lo esperado, va en medio.",
+  es:"«Todavía» son dos palabras distintas en inglés según la frase sea afirmativa (<b>still</b>) o negativa (<b>yet</b>).",
+  ex:[
+    {ok:1,t:"I'm <em>still</em> waiting for the reply."},
+    {ok:1,t:"I haven't finished <em>yet</em>."},
+    {ok:1,t:"Have you sent it <em>yet</em>?"},
+    {ok:1,t:"I've <em>already</em> restarted the router."}
+  ],
+  drills:[
+    {q:"I haven't received the email ___ .", a:["yet"]},
+    {q:"She's ___ working on the same ticket.", a:["still"]},
+    {q:"I've ___ done that twice.", a:["already"]}
+  ]
+},
+{
+  id:"falsefriends", head:"false friends", pos:"vocab.",
+  rule:"Palabras que se parecen al español y significan otra cosa. Son las que más caro se pagan en una entrevista, porque suenan seguras.",
+  es:"<b>actually</b> = en realidad (actualmente = <i>currently</i>) · <b>eventually</b> = finalmente (eventualmente = <i>possibly</i>) · <b>sensible</b> = sensato (sensible = <i>sensitive</i>) · <b>realize</b> = darse cuenta (realizar = <i>carry out</i>) · <b>embarrassed</b> = avergonzado (embarazada = <i>pregnant</i>) · <b>carpet</b> = alfombra (carpeta = <i>folder</i>) · <b>exit</b> = salida (éxito = <i>success</i>) · <b>library</b> = biblioteca (librería = <i>bookshop</i>) · <b>attend</b> = asistir a (atender = <i>deal with</i>) · <b>introduce</b> = presentar a alguien (introducir = <i>insert</i>) · <b>career</b> = trayectoria (carrera universitaria = <i>degree</i>) · <b>argument</b> = discusión (argumento = <i>plot</i>) · <b>constipated</b> = estreñido (constipado = <i>to have a cold</i>).",
+  ex:[
+    {ok:1,t:"<em>Actually</em>, I started in March. (en realidad)"},
+    {ok:1,t:"I'm <em>currently</em> working at an agency. (actualmente)"},
+    {ok:1,t:"I <em>realized</em> the cable was loose. (me di cuenta)"},
+    {ok:0,t:"I want to <s>realize</s> a project. → I want to <em>carry out</em> a project."}
+  ],
+  drills:[
+    {q:"___ , I'm working as a systems technician. (actualmente)", a:["currently"]},
+    {q:"I finished my ___ in 2026. (carrera / titulación)", a:["degree","course"]},
+    {q:"That's a very ___ decision. (sensata)", a:["sensible"]}
+  ]
+},
+{
+  id:"subject", head:"el sujeto es obligatorio", pos:"struct.",
+  rule:"En inglés toda oración necesita un sujeto explícito, incluso cuando no significa nada: <em>it</em> y <em>there</em>.",
+  es:"En español se dice «llueve», «es importante», «aquí solo se habla español». En inglés hay que poner algo delante del verbo, siempre.",
+  ex:[
+    {ok:1,t:"<em>It</em>'s raining."},
+    {ok:1,t:"<em>It</em>'s important to test it first."},
+    {ok:1,t:"Here <em>people</em> only speak Spanish."},
+    {ok:0,t:"<s>Is</s> very difficult. → <em>It is</em> very difficult."}
+  ],
+  drills:[
+    {q:"___ 's cold today. (sujeto vacío)", a:["it"]},
+    {q:"___ is a problem with the printer.", a:["there"]}
+  ]
+},
+{
+  id:"doaux", head:"do / does en preguntas y negativas", pos:"struct.",
+  rule:"Con verbos normales, las preguntas y las negativas del presente necesitan <em>do / does</em>, y el verbo principal se queda en infinitivo.",
+  es:"En español basta con la entonación: «¿Tienes tiempo?». En inglés hace falta el auxiliar: <b>Do you have time?</b>. Y en negativa la -s se va al auxiliar: <b>He doesn't work</b>, no «he doesn't works».",
+  ex:[
+    {ok:1,t:"<em>Do</em> you have any experience with Linux?"},
+    {ok:1,t:"He <em>doesn't</em> work here any more."},
+    {ok:0,t:"<s>You have</s> a moment? → <em>Do you have</em> a moment?"}
+  ],
+  drills:[
+    {q:"___ she speak English?", a:["does"]},
+    {q:"They ___ use that system any more.", a:["don't","do not"]}
+  ]
+},
+{
+  id:"articles", head:"the — cuándo NO se pone", pos:"det.",
+  rule:"Sin <em>the</em>: cosas en general (plural o incontable), idiomas, comidas, días y la mayoría de países. Con <em>the</em>: algo concreto que el oyente ya identifica.",
+  es:"«Me gusta la música» → <b>I like music</b>. «El inglés es difícil» → <b>English is difficult</b>. Pero «la música de ese bar» → <b>the music in that bar</b>.",
+  ex:[
+    {ok:1,t:"I like <em>music</em>. / I speak <em>English</em>."},
+    {ok:1,t:"<em>Life</em> in Madrid is expensive."},
+    {ok:1,t:"<em>The servers</em> in that room are old. (concretos)"},
+    {ok:0,t:"<s>The</s> English is difficult. → <em>English</em> is difficult."}
+  ],
+  drills:[
+    {q:"I'm studying ___ (nada / the) English. → escribe «nothing» si no lleva", a:["nothing","-","nada"]},
+    {q:"Can you close ___ door, please?", a:["the"]}
+  ]
+},
+{
+  id:"willgoing", head:"will / going to", pos:"tense.",
+  rule:"<em>going to</em> = plan ya decidido, o una predicción con evidencia delante. <em>will</em> = decisión en el momento, promesa, oferta o predicción sin pruebas.",
+  es:"«Voy a» ≈ <b>going to</b> (ya lo tenías pensado). Si lo decides mientras hablas, <b>will</b>: <i>I'll check it right now</i>.",
+  ex:[
+    {ok:1,t:"We'<em>re going to</em> migrate the server next week. (plan)"},
+    {ok:1,t:"I'<em>ll</em> look into it and get back to you. (ahora mismo)"},
+    {ok:1,t:"Look at those clouds — it'<em>s going to</em> rain."}
+  ],
+  drills:[
+    {q:"Don't worry, I ___ send it this afternoon. (decisión ahora)", a:["will","'ll","ll"]},
+    {q:"I ___ ___ start a new course in September. (plan)", a:["am going to","'m going to","m going to"]}
+  ]
+},
+{
+  id:"prepstime", head:"at / on / in (tiempo)", pos:"prep.",
+  rule:"<em>at</em> + hora exacta y <em>at night</em>. <em>on</em> + días y fechas. <em>in</em> + meses, años, estaciones y partes del día.",
+  es:"Se memoriza por tamaño: de lo más pequeño a lo más grande. Hora → <b>at</b>. Día → <b>on</b>. Mes o año → <b>in</b>.",
+  ex:[
+    {ok:1,t:"The meeting is <em>at</em> nine <em>on</em> Monday."},
+    {ok:1,t:"I started <em>in</em> March 2026."},
+    {ok:1,t:"I study <em>in</em> the evening, never <em>at</em> night."}
+  ],
+  drills:[
+    {q:"The interview is ___ Friday.", a:["on"]},
+    {q:"I finish work ___ six.", a:["at"]},
+    {q:"He started ___ 2025.", a:["in"]}
+  ]
+},
+{
+  id:"phrasal", head:"phrasal verbs de trabajo", pos:"verb.",
+  rule:"Los que de verdad vas a oír en soporte y en una entrevista técnica.",
+  es:"<b>set up</b> = configurar/montar · <b>roll out</b> = desplegar · <b>back up</b> = hacer copia de seguridad · <b>log in / log out</b> = iniciar/cerrar sesión · <b>shut down</b> = apagar · <b>sort out</b> = resolver · <b>look into</b> = investigar · <b>come up with</b> = idear · <b>deal with</b> = ocuparse de · <b>follow up</b> = dar seguimiento · <b>get back to</b> = responder a alguien · <b>run into</b> = encontrarse un problema · <b>carry out</b> = llevar a cabo.",
+  ex:[
+    {ok:1,t:"I <em>set up</em> the new workstations last week."},
+    {ok:1,t:"I'll <em>look into</em> it and <em>get back to</em> you."},
+    {ok:1,t:"We <em>ran into</em> a problem with the migration."}
+  ],
+  drills:[
+    {q:"Please ___ ___ your files before the update. (copia de seguridad)", a:["back up"]},
+    {q:"I'll ___ ___ it this afternoon. (investigar)", a:["look into"]},
+    {q:"Can you ___ ___ the printer for the new user? (configurar)", a:["set up"]}
+  ]
+},
+{
+  id:"edsound", head:"la -ed del pasado", pos:"phon.",
+  rule:"La terminación <em>-ed</em> tiene tres sonidos distintos y solo uno añade sílaba.",
+  es:"Después de <b>t</b> o <b>d</b> → /ɪd/, sílaba nueva: <i>wanted, needed, started</i>. Después de sonido sordo (p, k, f, s, sh, ch) → /t/: <i>worked, helped, fixed, watched</i>. Después de sonido sonoro o vocal → /d/: <i>played, solved, opened, learned</i>. El error típico es decir «work-ed» y «fix-ed» con sílaba extra.",
+  ex:[
+    {ok:1,t:"want<em>ed</em> = WANT-id (dos sílabas + una)"},
+    {ok:1,t:"work<em>ed</em> = WORKT (una sola sílaba)"},
+    {ok:1,t:"solv<em>ed</em> = SOLVD (una sola sílaba)"}
+  ],
+  drills:[
+    {q:"«installed» ¿suena /ɪd/, /t/ o /d/?", a:["/d/","d"]},
+    {q:"«fixed» ¿suena /ɪd/, /t/ o /d/?", a:["/t/","t"]},
+    {q:"«started» ¿suena /ɪd/, /t/ o /d/?", a:["/id/","/ɪd/","id"]}
+  ]
+},
+{
+  id:"borrow", head:"borrow / lend", pos:"verb.",
+  rule:"<em>borrow</em> = coger prestado (yo recibo). <em>lend</em> = prestar (yo doy).",
+  es:"En español «prestar» se usa mal en las dos direcciones. En inglés se distingue por quién recibe: <b>borrow from</b> / <b>lend to</b>.",
+  ex:[
+    {ok:1,t:"Can I <em>borrow</em> your charger?"},
+    {ok:1,t:"Could you <em>lend</em> me a cable?"},
+    {ok:0,t:"Can you <s>borrow</s> me your pen? → Can you <em>lend</em> me your pen?"}
+  ],
+  drills:[
+    {q:"Could you ___ me five euros?", a:["lend"]},
+    {q:"I need to ___ a laptop from the office.", a:["borrow"]}
+  ]
+}
+];
+
+/* --- Dictation: hear it, write it --- */
+const DICTATION = [
+{c:"work", t:"I need to reset your password."},
+{c:"work", t:"The printer isn't connected to the network."},
+{c:"work", t:"Could you restart the computer and try again, please?"},
+{c:"work", t:"I've already checked the cables and the router."},
+{c:"work", t:"We're going to roll out the update tomorrow morning."},
+{c:"work", t:"The server has been down since eight o'clock."},
+{c:"work", t:"I'll look into it and get back to you this afternoon."},
+{c:"work", t:"Make sure you back up your files before the migration."},
+{c:"work", t:"I set up three new workstations and installed Microsoft 365."},
+{c:"work", t:"There's a problem with the permissions on that shared folder."},
+{c:"travel", t:"Excuse me, where is the nearest bus stop?"},
+{c:"travel", t:"I'd like a return ticket to Barcelona, please."},
+{c:"travel", t:"Is breakfast included in the price?"},
+{c:"travel", t:"My flight has been delayed by two hours."},
+{c:"travel", t:"Could you tell me how to get to the city centre?"},
+{c:"travel", t:"I've lost my luggage and I need to report it."},
+{c:"travel", t:"Do you have a room available for two nights?"},
+{c:"travel", t:"I'm sorry, I don't understand. Could you speak more slowly?"},
+{c:"daily", t:"I usually get up at seven and have a coffee."},
+{c:"daily", t:"There's a supermarket around the corner."},
+{c:"daily", t:"How long have you been living in Madrid?"},
+{c:"daily", t:"I haven't seen that film yet."},
+{c:"daily", t:"We were supposed to meet at six, but she was late."},
+{c:"daily", t:"It's been raining all week, so I stayed at home."},
+{c:"daily", t:"I don't feel like cooking tonight."},
+{c:"job", t:"I'm a systems technician with two years of experience."},
+{c:"job", t:"I taught myself Python to automate the paperwork."},
+{c:"job", t:"I'd say my main strength is solving problems under pressure."},
+{c:"job", t:"I'm looking for a role where I can grow into infrastructure."},
+{c:"job", t:"I've been working at the agency since March."}
+];
+
+/* --- Speaking prompts --- */
+const SPEAK = [
+{c:"job", p:"Tell me about yourself in 60 seconds.", hint:"Empieza por lo que eres ahora, no por dónde naciste: «I'm a systems technician…»"},
+{c:"job", p:"Describe a problem you solved at work and how you solved it.", hint:"Estructura: situación → qué hiciste → resultado. Usa past simple."},
+{c:"job", p:"Why do you want to work in IT support?", hint:"Una razón real + un ejemplo concreto. Nada de «because I love computers»."},
+{c:"job", p:"How would you explain a technical problem to someone who is not technical?", hint:"Es la pregunta trampa del soporte. Da un ejemplo real de la oficina."},
+{c:"work", p:"A user calls: their computer won't connect to Wi-Fi. Walk them through it.", hint:"Imperativos amables: «Could you check…», «Try to…», «Let me know if…»"},
+{c:"work", p:"Explain what you did last week at work.", hint:"Past simple todo el rato. Cinco frases bastan."},
+{c:"travel", p:"You are at the airport and your flight is cancelled. Explain the situation and ask for options.", hint:"«My flight has been cancelled» + «What are my options?»"},
+{c:"travel", p:"Ask for directions to the train station and repeat them back.", hint:"Repetir lo que te dicen es lo que de verdad se practica poco."},
+{c:"daily", p:"Describe your typical Monday, from waking up to going to bed.", hint:"Present simple + adverbios de frecuencia: usually, always, sometimes."},
+{c:"daily", p:"Talk about something you want to change this year and why.", hint:"«I want to…», «I'm going to…», «because…»"}
+];
+
+/* --- Writing prompts --- */
+const WRITE = [
+{c:"work", p:"Write an email to a user explaining that you can't fix their issue today, and what happens next.", hint:"Tono: claro, sin disculpas de más. 60-100 palabras."},
+{c:"work", p:"Write a short handover note describing three tasks you finished this week.", hint:"Past simple, una frase por tarea."},
+{c:"job", p:"Write a short cover message (4-6 sentences) applying for an IT support role.", hint:"Quién eres, qué has hecho, por qué esa empresa, cierre."},
+{c:"job", p:"Answer in writing: «What is your greatest weakness?»", hint:"Debilidad real + qué estás haciendo al respecto. Nada de «I work too hard»."},
+{c:"travel", p:"Write a message to a hotel asking for a late check-in and luggage storage.", hint:"«I would like to…», «Would it be possible to…»"},
+{c:"daily", p:"Describe your last weekend in 6 sentences.", hint:"Past simple. Si te sale «I have gone yesterday», repasa present perfect."}
+];
+
+/* --- Reading --- */
+const READINGS = [
+{
+  id:"ticket", title:"A support ticket", tag:"work",
+  body:`<p><b>From:</b> Marta Ruiz &nbsp;·&nbsp; <b>Subject:</b> Laptop extremely slow after update</p>
+<p>Hi,</p>
+<p>Since the update was rolled out on Tuesday, my laptop has been taking almost ten minutes to boot. Once it starts, everything runs slowly and Outlook freezes whenever I open a large attachment. I've already restarted it twice and I've run out of ideas.</p>
+<p>I do need it working by Thursday morning, because I'm giving a presentation to a client. If it can't be sorted out by then, could you lend me a spare laptop instead?</p>
+<p>Thanks in advance,<br>Marta</p>`,
+  gloss:[["rolled out","desplegado, puesto en producción"],["to boot","arrancar (el equipo)"],["freezes","se queda colgado"],["I've run out of ideas","se me han acabado las ideas"],["sorted out","resuelto"],["spare","de repuesto"]],
+  qs:[
+    {q:"When did the problem start?", a:["tuesday","on tuesday","since tuesday","after the update"]},
+    {q:"What has Marta already tried? (one word: what did she do twice)", a:["restarted","restart","restarting","reboot","rebooted"]},
+    {q:"What does she ask for if it can't be fixed?", a:["a spare laptop","spare laptop","another laptop","a laptop"]}
+  ]
+},
+{
+  id:"advert", title:"A job advert (sample)", tag:"job",
+  body:`<p><b>IT Support Technician (N1/N2) — Madrid, hybrid</b></p>
+<p>We are looking for a technician to join our service desk. You will be the first point of contact for around 200 users, dealing with incidents on Windows workstations, Microsoft 365 accounts and basic network issues. You will also help to set up equipment for new starters and to keep our asset inventory up to date.</p>
+<p><b>What we are looking for</b>: a qualification in computer systems or equivalent experience; a working knowledge of Windows and basic Linux administration; scripting (PowerShell or Python) is a plus. You should be comfortable explaining technical matters to non-technical colleagues. English at B2 level is required, as part of our support is provided to international teams.</p>
+<p><b>What we offer</b>: a permanent contract, on-call rotation paid separately, and a training budget.</p>`,
+  gloss:[["service desk","mesa de servicio, soporte"],["first point of contact","primer punto de contacto"],["new starters","empleados nuevos"],["asset inventory","inventario de equipos"],["is a plus","se valora"],["comfortable explaining","que sepa explicar con soltura"],["on-call rotation","turno de guardias"]],
+  qs:[
+    {q:"How many users would you support?", a:["200","around 200","about 200","two hundred"]},
+    {q:"Which two scripting languages are mentioned?", a:["powershell and python","python and powershell","powershell, python","python, powershell"]},
+    {q:"Why do they require B2 English?", a:["international teams","support to international teams","because support is provided to international teams","to support international teams"]}
+  ]
+},
+{
+  id:"airport", title:"At the airport", tag:"travel",
+  body:`<p>The departure board had been showing "delayed" for over an hour when the announcement finally came: the flight had been cancelled because of a technical fault. Passengers were asked to go to desk 14, where two members of staff were already dealing with a long queue.</p>
+<p>When my turn came, I explained that I had a connecting flight in Lisbon and asked whether they could put me on the next available service. The agent checked, said there was nothing until the following morning, and offered me a hotel voucher and a seat on the 7.15 flight. I took it. Before leaving, I asked her to confirm in writing that my luggage would be transferred automatically, because the last time I had assumed it, it ended up in another country.</p>`,
+  gloss:[["departure board","panel de salidas"],["technical fault","avería técnica"],["queue","cola"],["connecting flight","vuelo de conexión"],["the next available service","el siguiente vuelo disponible"],["voucher","vale, bono"],["ended up","acabó (en algún sitio)"]],
+  qs:[
+    {q:"Why was the flight cancelled?", a:["technical fault","a technical fault","because of a technical fault"]},
+    {q:"What two things did the agent offer?", a:["a hotel voucher and a seat","hotel voucher and a seat on the 7.15 flight","a hotel voucher and a flight","hotel voucher and seat"]},
+    {q:"Why did he want written confirmation about the luggage?", a:["because last time it ended up in another country","it ended up in another country","because his luggage was lost before","last time it was lost"]}
+  ]
+}
+];
+
+/* --- Interview answers, built from the real CV --- */
+const INTERVIEW = [
+{
+  q:"Tell me about yourself.",
+  s:"45-60 s",
+  a:`I'm a systems and networks technician based in Madrid. I finished my qualification in computer systems and networks in 2026, and I'm currently working at a real-estate agency, where I look after the office IT and build internal tools. I joined through a 350-hour work placement and stayed on after I graduated. Before that, I did an internship at the Faculty of Computer Science at the Complutense University, doing first and second line support and basic Linux administration. What I enjoy most is turning a repetitive manual process into something automatic, and I'd like to grow towards infrastructure and systems administration.`
+},
+{
+  q:"Walk me through something you have built.",
+  s:"60-75 s",
+  a:`The one I'm most proud of is a document generator I wrote in Python. The office was drafting rental contracts, deposit agreements and sale authorisations by hand, copying and pasting from old files, which was slow and easy to get wrong. I built a tool with python-docx that fills the templates from a form, and I put a simple Tkinter interface on top so the sales team can use it without touching any code. It removed the manual drafting completely. The hardest part wasn't the code, it was getting the templates right, because a legal document has to be exact.`
+},
+{
+  q:"What do you do day to day in your current job?",
+  s:"45-60 s",
+  a:`Three things, roughly. First, user support: hardware and software incidents, and preparing new machines with the operating system and Microsoft 365. Second, I manage the company's hosting, domain and corporate mailboxes. And third, I develop and maintain the corporate website — the property catalogue, the contact forms with PHPMailer and a viewing-booking system — which runs on our shared hosting. I'm the only technical person in the office, so I deal with whatever comes up.`
+},
+{
+  q:"Tell me about your internship at the university.",
+  s:"40-50 s",
+  a:`It was 150 hours at the Faculty of Computer Science at the Complutense University. I gave first and second line support to end users, and I did basic administration on Linux servers: creating and managing users, permissions, updates and general maintenance. I also assembled and maintained equipment in classrooms and offices, and I solved a fair number of incidents remotely over SSH and remote desktop. It was the first time I had worked with real users rather than in a classroom.`
+},
+{
+  q:"How is your English?",
+  s:"25-35 s",
+  a:`I'd say I'm at an intermediate level, around B1, and I'm actively working on it. I read technical documentation in English every day, and I've switched my phone and my laptop to English so that I use it constantly. I'm comfortable reading and writing; speaking is what I'm practising most at the moment, because I don't have many chances to use it in Madrid. I'm not going to tell you it's perfect, but it improves every month and I'm not afraid to use it.`
+},
+{
+  q:"What is your greatest strength?",
+  s:"30-40 s",
+  a:`Working out what is actually wrong. In support, users describe the symptom, not the problem, so a big part of the job is asking the right questions calmly and checking things in order rather than guessing. I'm also fairly persistent — if something is broken I don't like leaving it half fixed. And I document what I do, so the next person doesn't have to start from zero.`
+},
+{
+  q:"What is your greatest weakness?",
+  s:"30-40 s",
+  a:`I tend to take too much on myself instead of asking for help early. When I started, I would spend an hour on something a colleague could have explained in five minutes, because I wanted to solve it on my own. I've learnt to set myself a limit: if I'm stuck after a reasonable amount of time, I ask. The other one is my spoken English, which is exactly why I'm practising it every day.`
+},
+{
+  q:"Where do you see yourself in five years?",
+  s:"30-40 s",
+  a:`Working in infrastructure — servers, networks and automation — rather than only on the desk. I'm starting a higher-level qualification in application development in September, because I want the development side to be solid as well; a lot of systems work these days is scripting and automation. In five years I'd like to be the person who designs and maintains the systems, not only the one who fixes them.`
+},
+{
+  q:"Why should we hire you?",
+  s:"30-40 s",
+  a:`Because I've already done this job with real users and I didn't need much supervision to do it. I cover both sides: support and systems on one hand, and scripting and web development on the other, which means I can fix a problem today and automate it so it doesn't come back. And I'm at the stage of my career where I want to learn quickly, which I think suits a team that is willing to teach.`
+},
+{
+  q:"Do you have any questions for us?",
+  s:"pregunta tú",
+  a:`How is the support team organised — how many people, and how are tickets escalated?
+What does a normal week look like for this role?
+What are the main systems I would be working with?
+Is there a budget or time set aside for certifications?
+What would you want me to have achieved after six months?`
+}
+];
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const DEF = {streak:0, lastDay:null, days:{}, grammarDone:[], dictDone:0, speakDone:0, writeDone:0, readDone:[]};
+let S = JSON.parse(JSON.stringify(DEF));
+let dbRef = null, sampleFn = null;
+
+function todayKey(){
+  const d = new Date();
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function localLoad(){
+  try{ const raw = localStorage.getItem("englishreps"); if(raw) S = Object.assign({}, DEF, JSON.parse(raw)); }catch(e){}
+}
+function localSave(){
+  try{ localStorage.setItem("englishreps", JSON.stringify(S)); }catch(e){}
+}
+let saveTimer = null;
+function save(){
+  localSave();
+  if(!dbRef) return;
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(function(){
+    dbRef.set(JSON.parse(JSON.stringify(S))).catch(function(){});
+  }, 600);
+}
+function today(){
+  const k = todayKey();
+  if(!S.days[k]) S.days[k] = {listen:false, speak:false, grammar:false};
+  return S.days[k];
+}
+function markBlock(name){
+  const t = today();
+  if(t[name]) return;
+  t[name] = true;
+  bumpStreak();
+  save();
+  paintStreak();
+  if(current === "today") render();
+}
+function bumpStreak(){
+  const k = todayKey();
+  if(S.lastDay === k) return;
+  const y = new Date(); y.setDate(y.getDate()-1);
+  const yk = y.getFullYear()+"-"+String(y.getMonth()+1).padStart(2,"0")+"-"+String(y.getDate()).padStart(2,"0");
+  S.streak = (S.lastDay === yk) ? (S.streak||0)+1 : 1;
+  S.lastDay = k;
+}
+function paintStreak(){ document.getElementById("streakN").textContent = S.streak || 0; }
+
+/* ============================================================
+   SPEECH
+   ============================================================ */
+let voice = null;
+function loadVoice(){
+  if(!("speechSynthesis" in window)) return;
+  const vs = speechSynthesis.getVoices();
+  voice = vs.find(function(v){return /en[-_]GB/i.test(v.lang);}) ||
+          vs.find(function(v){return /en[-_]US/i.test(v.lang);}) ||
+          vs.find(function(v){return /^en/i.test(v.lang);}) || null;
+}
+if("speechSynthesis" in window){
+  loadVoice();
+  speechSynthesis.onvoiceschanged = loadVoice;
+}
+function say(text, rate){
+  if(!("speechSynthesis" in window)) return false;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  if(voice) u.voice = voice;
+  u.lang = voice ? voice.lang : "en-GB";
+  u.rate = rate || 0.92;
+  speechSynthesis.speak(u);
+  return true;
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function el(tag, cls, html){
+  const n = document.createElement(tag);
+  if(cls) n.className = cls;
+  if(html !== undefined) n.innerHTML = html;
+  return n;
+}
+function norm(s){
+  return String(s).toLowerCase()
+    .replace(/[’']/g,"'")
+    .replace(/[.,;:!?¿¡"“”()]/g,"")
+    .replace(/\s+/g," ").trim();
+}
+function words(s){ return norm(s).split(" ").filter(Boolean); }
+
+/* word-level diff, longest common subsequence */
+function diff(target, given){
+  const a = words(target), b = words(given);
+  const m = a.length, n = b.length;
+  const L = [];
+  for(let i=0;i<=m;i++){ L.push(new Array(n+1).fill(0)); }
+  for(let i=m-1;i>=0;i--){
+    for(let j=n-1;j>=0;j--){
+      L[i][j] = a[i]===b[j] ? L[i+1][j+1]+1 : Math.max(L[i+1][j], L[i][j+1]);
+    }
+  }
+  const out = []; let i=0, j=0, hit=0;
+  while(i<m && j<n){
+    if(a[i]===b[j]){ out.push({k:"keep", w:a[i]}); hit++; i++; j++; }
+    else if(L[i+1][j] >= L[i][j+1]){ out.push({k:"miss", w:a[i]}); i++; }
+    else { out.push({k:"extra", w:b[j]}); j++; }
+  }
+  while(i<m){ out.push({k:"miss", w:a[i++]}); }
+  while(j<n){ out.push({k:"extra", w:b[j++]}); }
+  return {parts:out, hit:hit, total:m};
+}
+function renderDiff(d){
+  return d.parts.map(function(p){
+    if(p.k==="keep") return '<span class="keep">'+p.w+'</span>';
+    if(p.k==="miss") return '<span class="miss">'+p.w+'</span>';
+    return '<span class="extra">'+p.w+'</span>';
+  }).join(" ");
+}
+function pickN(arr, n, seed){
+  const copy = arr.slice();
+  const out = [];
+  let s = seed || 1;
+  while(copy.length && out.length < n){
+    s = (s*9301 + 49297) % 233280;
+    out.push(copy.splice(Math.floor((s/233280)*copy.length),1)[0]);
+  }
+  return out;
+}
+function daySeed(){
+  const k = todayKey().replace(/-/g,"");
+  return parseInt(k.slice(-5),10) || 7;
+}
+const CTX_LABEL = {work:"work", travel:"travel", daily:"everyday", job:"interview"};
+
+/* ============================================================
+   CLAUDE FEEDBACK
+   ============================================================ */
+const ERR_COPY = {
+  not_granted:"No has dado permiso para usar Claude en esta página. Recárgala y acepta si quieres corrección automática.",
+  sampling_disabled:"Claude no está disponible en esta cuenta.",
+  not_declared:"Esta versión de la página no puede pedir corrección.",
+  capability_disabled:"La corrección no está disponible en esta vista.",
+  capability_removed:"La corrección no está disponible en esta vista.",
+  rate_limited:"Demasiadas peticiones seguidas. Espera un minuto y vuelve a darle.",
+  session_expired:"Se ha cerrado la sesión. Vuelve a entrar y prueba otra vez.",
+  refused:"Claude no ha querido responder a ese texto. Cámbialo y prueba otra vez.",
+  empty_completion:"No ha salido respuesta. Escribe algo más largo y vuelve a intentarlo.",
+  invalid_json:"La respuesta ha venido mal formada. Dale otra vez.",
+  prompt_too_large:"El texto es demasiado largo. Manda menos de una vez.",
+  cancelled:""
+};
+function errText(code){ return ERR_COPY[code] || "Fallo de conexión al pedir la corrección. Prueba otra vez."; }
+
+const CHECK_RULES =
+"Eres profesor de inglés y corriges a un hispanohablante de nivel B1 que quiere llegar a B2. "+
+"Corrige su texto en inglés. Responde SOLO con un objeto JSON con esta forma exacta:\n"+
+'{"corrected":"el texto corregido en inglés, natural pero fiel a lo que quiso decir",'+
+'"notes":[{"wrong":"lo que escribió mal","right":"cómo se dice","why":"la regla, en ESPAÑOL, en una frase"}],'+
+'"verdict":"una frase en ESPAÑOL diciendo qué tal está y qué es lo siguiente que debe arreglar"}\n'+
+"Máximo 6 notas, las más importantes primero. Si algo está bien, no lo cambies solo por estilo. "+
+"Las explicaciones de \"why\" van SIEMPRE en español; \"corrected\" y \"right\" en inglés.";
+
+async function checkEnglish(task, text, box){
+  if(!sampleFn){ box.innerHTML = '<div class="warn">La corrección automática no está disponible en esta vista. Puedes seguir practicando sin ella.</div>'; return; }
+  box.innerHTML = '<div class="thinking">Checking</div>';
+  try{
+    const data = await sampleFn.json(
+      CHECK_RULES + "\n\nTAREA: " + task + "\n\nTEXTO DEL ALUMNO:\n" + text,
+      {modelTier:"default"}
+    );
+    const wrap = el("div","fbox");
+    wrap.appendChild(el("div","eyebrow","corrected"));
+    wrap.appendChild(el("div","corrected", escapeHtml(String(data.corrected||""))));
+    const notes = Array.isArray(data.notes) ? data.notes : [];
+    if(notes.length){
+      const nb = el("div","");
+      nb.appendChild(el("div","eyebrow","what to fix"));
+      notes.forEach(function(n){
+        const r = el("div","note");
+        r.appendChild(el("span","x", escapeHtml(String(n.wrong||""))));
+        r.appendChild(el("span","v", escapeHtml(String(n.right||""))));
+        r.appendChild(el("span","w", escapeHtml(String(n.why||""))));
+        nb.appendChild(r);
+      });
+      wrap.appendChild(nb);
+    }
+    if(data.verdict) wrap.appendChild(el("div","muted", escapeHtml(String(data.verdict))));
+    box.innerHTML = "";
+    box.appendChild(wrap);
+  }catch(e){
+    box.innerHTML = '<div class="warn">'+escapeHtml(errText(e && e.code))+'</div>';
+  }
+}
+function escapeHtml(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+/* ============================================================
+   VIEWS
+   ============================================================ */
+const VIEWS = [
+  {id:"today",   label:"Today"},
+  {id:"listen",  label:"Listen"},
+  {id:"speak",   label:"Speak"},
+  {id:"write",   label:"Write"},
+  {id:"read",    label:"Read"},
+  {id:"grammar", label:"Grammar"},
+  {id:"job",     label:"Interview"}
+];
+let current = "today";
+
+function buildNav(){
+  const nav = document.getElementById("nav");
+  nav.innerHTML = "";
+  VIEWS.forEach(function(v){
+    const b = el("button", null, v.label);
+    b.id = "nav-"+v.id;
+    b.setAttribute("aria-current", current===v.id ? "true" : "false");
+    b.onclick = function(){ go(v.id); };
+    nav.appendChild(b);
+  });
+}
+function go(id){
+  current = id;
+  buildNav();
+  render();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function render(){
+  const m = document.getElementById("main");
+  m.innerHTML = "";
+  ({today:viewToday, listen:viewListen, speak:viewSpeak, write:viewWrite,
+    read:viewRead, grammar:viewGrammar, job:viewJob})[current](m);
+}
+
+/* ---------- TODAY ---------- */
+function viewToday(m){
+  const t = today();
+  m.appendChild(el("div","eyebrow","today's session · 15 minutes"));
+  m.appendChild(el("h2",null,"Three blocks. That's the whole deal."));
+  m.appendChild(el("p","lead","Quince minutos que sí puedes sostener todos los días. No hace falta hacerlos seguidos, pero sí los tres."));
+
+  const blocks = el("div","blocks");
+  [
+    {k:"listen", to:"listen", min:"5 min", ttl:"Listen & write", why:"Cinco frases dictadas. Es lo que más rápido arregla el oído."},
+    {k:"speak",  to:"speak",  min:"5 min", ttl:"Say it out loud", why:"Dos respuestas habladas. Sin esto no se llega a B2, por mucho que leas."},
+    {k:"grammar",to:"grammar",min:"5 min", ttl:"One confusable", why:"Un par de los que te lían, con ejercicios. Son "+CONFUSABLES.length+" en total."}
+  ].forEach(function(b){
+    const n = el("button","block");
+    n.dataset.done = t[b.k] ? "1" : "0";
+    n.appendChild(el("div","min",b.min));
+    n.appendChild(el("div","ttl",b.ttl));
+    n.appendChild(el("div","why",b.why));
+    n.appendChild(el("div","state", t[b.k] ? "done today" : "not done"));
+    n.onclick = function(){ go(b.to); };
+    blocks.appendChild(n);
+  });
+  m.appendChild(blocks);
+
+  const doneCount = ["listen","speak","grammar"].filter(function(k){return t[k];}).length;
+  const status = el("p","lead");
+  status.style.marginTop = "18px";
+  status.innerHTML = doneCount === 3
+    ? "Los tres bloques hechos. Racha de <b>"+(S.streak||0)+"</b> día(s) — no la rompas mañana."
+    : "Llevas <b>"+doneCount+" de 3</b> hoy. El que más cuesta empezar es el de hablar; empieza por ese.";
+  m.appendChild(status);
+
+  m.appendChild(el("hr","rule"));
+  m.appendChild(el("div","eyebrow","total so far"));
+  const tally = el("div","tally");
+  [
+    [S.dictDone||0,"dictations"],
+    [S.speakDone||0,"spoken answers"],
+    [S.writeDone||0,"texts corrected"],
+    [(S.grammarDone||[]).length + "/" + CONFUSABLES.length,"confusables"]
+  ].forEach(function(p){
+    const d = el("div");
+    d.appendChild(el("b",null,String(p[0])));
+    d.appendChild(el("span",null,p[1]));
+    tally.appendChild(d);
+  });
+  m.appendChild(tally);
+
+  m.appendChild(el("hr","rule"));
+  m.appendChild(el("div","eyebrow","the honest part"));
+  m.appendChild(el("p",null,"Cambiar el móvil al inglés no te va a subir de nivel: reconoces «Settings» y poco más. Lo que mueve la aguja es <b>producir</b> — hablar y escribir — y que alguien te corrija. Por eso los bloques de hablar y escribir son los que llevan corrección de verdad, y el de escuchar es el que hace el trabajo silencioso."));
+  m.appendChild(el("p","muted","Si algún día solo tienes cinco minutos, haz el de hablar. Es el que se evalúa en una entrevista."));
+}
+
+/* ---------- LISTEN ---------- */
+function viewListen(m){
+  m.appendChild(el("div","eyebrow","listen & write"));
+  m.appendChild(el("h2",null,"Dictation"));
+  m.appendChild(el("p","lead","Dale a <b>Play</b>, escribe lo que oigas y comprueba. Puedes repetirlo, pero no lo leas antes: el objetivo es el oído, no la lectura."));
+
+  if(!("speechSynthesis" in window)){
+    m.appendChild(el("div","warn","Este navegador no puede leer en voz alta. Prueba en Chrome o Edge."));
+  }
+
+  const set = pickN(DICTATION, 5, daySeed());
+  let solved = 0;
+
+  set.forEach(function(item, idx){
+    const p = el("div","panel");
+    p.style.marginBottom = "12px";
+    const top = el("div","row");
+    top.appendChild(el("span","ctx-tag", CTX_LABEL[item.c] || item.c));
+    top.appendChild(el("span","score","#"+(idx+1)));
+    top.appendChild(el("div","spacer"));
+    const play = el("button","btn ghost","▶  Play");
+    const slow = el("button","mini","slow");
+    play.onclick = function(){ say(item.t, 0.92); };
+    slow.onclick = function(){ say(item.t, 0.65); };
+    top.appendChild(slow); top.appendChild(play);
+    p.appendChild(top);
+
+    const inp = el("input");
+    inp.type = "text"; inp.id = "dict-"+idx;
+    inp.placeholder = "Type what you hear…";
+    inp.autocapitalize = "sentences"; inp.autocomplete = "off"; inp.spellcheck = false;
+    inp.style.marginTop = "12px";
+    p.appendChild(inp);
+
+    const out = el("div","");
+    out.style.marginTop = "10px";
+    p.appendChild(out);
+
+    const bar = el("div","row");
+    bar.style.marginTop = "10px";
+    const chk = el("button","btn","Check");
+    const rev = el("button","mini","reveal");
+    let checked = false;
+    chk.onclick = function(){
+      if(!inp.value.trim()) return;
+      const d = diff(item.t, inp.value);
+      const pct = d.total ? Math.round(100*d.hit/d.total) : 0;
+      out.innerHTML = '<div class="score">'+pct+'% — <span class="miss" style="padding:0 3px">verde</span> = te lo dejaste · <span class="extra" style="padding:0 3px">rojo</span> = sobra</div>'+
+                      '<div class="diff" style="margin-top:6px">'+renderDiff(d)+'</div>'+
+                      '<div class="muted" style="margin-top:8px">'+escapeHtml(item.t)+'</div>';
+      if(!checked){
+        checked = true; solved++;
+        S.dictDone = (S.dictDone||0)+1;
+        save();
+        if(solved >= 4) markBlock("listen");
+      }
+    };
+    rev.onclick = function(){ out.innerHTML = '<div class="muted">'+escapeHtml(item.t)+'</div>'; };
+    inp.addEventListener("keydown", function(e){ if(e.key==="Enter") chk.onclick(); });
+    bar.appendChild(chk); bar.appendChild(rev);
+    p.appendChild(bar);
+    m.appendChild(p);
+  });
+
+  m.appendChild(el("p","muted","Las cinco frases cambian cada día. Con cuatro corregidas, el bloque cuenta como hecho."));
+}
+
+/* ---------- SPEAK ---------- */
+function viewSpeak(m){
+  m.appendChild(el("div","eyebrow","say it out loud"));
+  m.appendChild(el("h2",null,"Speaking"));
+  m.appendChild(el("p","lead","Contesta <b>en voz alta</b>, aunque estés solo y te dé vergüenza. Después escribe lo que has dicho — o dicta con el micrófono si tu navegador lo permite — y pídele la corrección."));
+
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const set = pickN(SPEAK, 2, daySeed()+3);
+  let done = 0;
+
+  set.forEach(function(item, idx){
+    const p = el("div","panel");
+    p.style.marginBottom = "14px";
+    const top = el("div","row");
+    top.appendChild(el("span","ctx-tag", CTX_LABEL[item.c] || item.c));
+    top.appendChild(el("div","spacer"));
+    const hear = el("button","mini","hear the question");
+    hear.onclick = function(){ say(item.p, 0.95); };
+    top.appendChild(hear);
+    p.appendChild(top);
+
+    p.appendChild(el("h3",null,escapeHtml(item.p)));
+    p.appendChild(el("div","muted",item.hint));
+
+    const ta = el("textarea");
+    ta.id = "speak-"+idx;
+    ta.placeholder = "Write what you said…";
+    ta.style.marginTop = "12px";
+    ta.style.minHeight = "110px";
+    p.appendChild(ta);
+
+    const bar = el("div","row");
+    bar.style.marginTop = "10px";
+    const chk = el("button","btn","Check my English");
+    bar.appendChild(chk);
+
+    if(SR){
+      const mic = el("button","btn ghost","🎙  Dictate");
+      let rec = null, listening = false;
+      mic.onclick = function(){
+        if(listening && rec){ rec.stop(); return; }
+        try{
+          rec = new SR();
+          rec.lang = "en-GB"; rec.interimResults = true; rec.continuous = true;
+          const base = ta.value ? ta.value + " " : "";
+          rec.onresult = function(e){
+            let s = "";
+            for(let i=0;i<e.results.length;i++) s += e.results[i][0].transcript;
+            ta.value = base + s;
+          };
+          rec.onerror = function(){ listening = false; mic.textContent = "🎙  Dictate"; };
+          rec.onend = function(){ listening = false; mic.textContent = "🎙  Dictate"; };
+          rec.start();
+          listening = true; mic.textContent = "■  Stop";
+        }catch(err){ mic.disabled = true; }
+      };
+      bar.appendChild(mic);
+    }
+    p.appendChild(bar);
+
+    const box = el("div","");
+    box.style.marginTop = "12px";
+    p.appendChild(box);
+
+    chk.onclick = async function(){
+      const v = ta.value.trim();
+      if(v.length < 12){ box.innerHTML = '<div class="warn">Escribe al menos una frase entera antes de pedir corrección.</div>'; return; }
+      chk.disabled = true;
+      await checkEnglish("Respuesta hablada a: " + item.p, v, box);
+      chk.disabled = false;
+      done++;
+      S.speakDone = (S.speakDone||0)+1;
+      save();
+      if(done >= 2 || set.length === 1) markBlock("speak");
+    };
+    m.appendChild(p);
+  });
+
+  if(!SR){
+    m.appendChild(el("div","warn","Este navegador no tiene dictado por micrófono. En Chrome o Edge te saldrá el botón 🎙. Mientras tanto, di la respuesta en voz alta y luego escríbela: el trabajo de hablar ya lo has hecho."));
+  }
+  m.appendChild(el("p","muted","Un truco que duele y funciona: grábate con el móvil diciendo la respuesta y escúchate. Oír tus propios errores es lo que más rápido los quita."));
+}
+
+/* ---------- WRITE ---------- */
+function viewWrite(m){
+  m.appendChild(el("div","eyebrow","write & get corrected"));
+  m.appendChild(el("h2",null,"Writing"));
+  m.appendChild(el("p","lead","Elige una tarea, escríbela sin traductor y pide la corrección. El valor está en ver <b>por qué</b> estaba mal, no en el texto corregido."));
+
+  const sel = el("div","row");
+  sel.style.marginBottom = "16px";
+  let chosen = 0;
+  const panel = el("div","panel");
+
+  function draw(){
+    const item = WRITE[chosen];
+    panel.innerHTML = "";
+    const top = el("div","row");
+    top.appendChild(el("span","ctx-tag", CTX_LABEL[item.c] || item.c));
+    panel.appendChild(top);
+    panel.appendChild(el("h3",null,escapeHtml(item.p)));
+    panel.appendChild(el("div","muted",item.hint));
+
+    const ta = el("textarea");
+    ta.id = "write-area";
+    ta.placeholder = "Write in English…";
+    ta.style.marginTop = "12px";
+    panel.appendChild(ta);
+
+    const bar = el("div","row");
+    bar.style.marginTop = "10px";
+    const chk = el("button","btn","Check my English");
+    const count = el("span","muted","0 words");
+    ta.addEventListener("input", function(){
+      const n = ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0;
+      count.textContent = n + " word" + (n===1?"":"s");
+    });
+    bar.appendChild(chk); bar.appendChild(count);
+    panel.appendChild(bar);
+
+    const box = el("div","");
+    box.style.marginTop = "14px";
+    panel.appendChild(box);
+
+    chk.onclick = async function(){
+      const v = ta.value.trim();
+      if(v.length < 20){ box.innerHTML = '<div class="warn">Escribe un poco más — con dos frases no hay nada que corregir.</div>'; return; }
+      chk.disabled = true;
+      await checkEnglish(item.p, v, box);
+      chk.disabled = false;
+      S.writeDone = (S.writeDone||0)+1;
+      save();
+    };
+  }
+
+  WRITE.forEach(function(w, i){
+    const b = el("button","mini", CTX_LABEL[w.c] + " " + (i+1));
+    b.onclick = function(){ chosen = i; draw(); };
+    sel.appendChild(b);
+  });
+  m.appendChild(sel);
+  m.appendChild(panel);
+  draw();
+}
+
+/* ---------- READ ---------- */
+function viewRead(m){
+  m.appendChild(el("div","eyebrow","read & understand"));
+  m.appendChild(el("h2",null,"Reading"));
+  m.appendChild(el("p","lead","Léelo entero antes de mirar el vocabulario. Adivinar por contexto es parte del examen."));
+
+  READINGS.forEach(function(r){
+    const p = el("div","panel");
+    p.style.marginBottom = "16px";
+    const top = el("div","row");
+    top.appendChild(el("span","ctx-tag", CTX_LABEL[r.tag] || r.tag));
+    top.appendChild(el("div","spacer"));
+    const hear = el("button","mini","read it to me");
+    hear.onclick = function(){
+      const tmp = document.createElement("div");
+      tmp.innerHTML = r.body;
+      say(tmp.textContent, 0.9);
+    };
+    top.appendChild(hear);
+    p.appendChild(top);
+
+    p.appendChild(el("h3",null,escapeHtml(r.title)));
+    p.appendChild(el("div","reader", r.body));
+
+    p.appendChild(el("div","eyebrow","vocabulary"));
+    const g = el("div","gloss");
+    r.gloss.forEach(function(pair){
+      g.appendChild(el("div",null,"<b>"+escapeHtml(pair[0])+"</b> — <i>"+escapeHtml(pair[1])+"</i>"));
+    });
+    p.appendChild(g);
+
+    const qwrap = el("div","");
+    qwrap.style.marginTop = "18px";
+    qwrap.appendChild(el("div","eyebrow","comprehension"));
+    r.qs.forEach(function(q, qi){
+      const d = el("div","drill");
+      d.style.marginBottom = "8px";
+      d.appendChild(el("div","q", escapeHtml(q.q)));
+      const inp = el("input"); inp.type="text"; inp.id = "read-"+r.id+"-"+qi;
+      inp.placeholder = "Answer in English…";
+      const fb = el("div","fb");
+      const b = el("button","mini","check");
+      const check = function(){
+        const v = norm(inp.value);
+        if(!v) return;
+        const ok = q.a.some(function(a){ return norm(a) === v || v.indexOf(norm(a)) >= 0 || norm(a).indexOf(v) >= 0; });
+        fb.className = "fb " + (ok ? "good" : "bad");
+        fb.textContent = ok ? "✓ Right." : "✗ Not quite — " + q.a[0];
+        if(ok && (S.readDone||[]).indexOf(r.id) < 0){ S.readDone = (S.readDone||[]).concat([r.id]); save(); }
+      };
+      b.onclick = check;
+      inp.addEventListener("keydown", function(e){ if(e.key==="Enter") check(); });
+      const row = el("div","row"); row.appendChild(inp); row.appendChild(b);
+      d.appendChild(row); d.appendChild(fb);
+      qwrap.appendChild(d);
+    });
+    p.appendChild(qwrap);
+    m.appendChild(p);
+  });
+}
+
+/* ---------- GRAMMAR ---------- */
+function viewGrammar(m){
+  m.appendChild(el("div","eyebrow","the confusables · "+CONFUSABLES.length+" entries"));
+  m.appendChild(el("h2",null,"Grammar"));
+  m.appendChild(el("p","lead","Tu problema no es «la gramática»: es una lista concreta de pares que en español son una sola cosa y en inglés son dos. Esta lista se acaba. Marca uno al día y en tres semanas los has visto todos."));
+
+  const suggested = CONFUSABLES.filter(function(c){ return (S.grammarDone||[]).indexOf(c.id) < 0; })[0];
+  if(suggested){
+    const s = el("div","panel");
+    s.style.marginBottom = "20px";
+    s.appendChild(el("div","eyebrow","today's entry"));
+    s.appendChild(el("div","headword", suggested.head));
+    const b = el("button","btn ghost","Open it");
+    b.style.marginTop = "10px";
+    b.onclick = function(){
+      const d = document.getElementById("gram-"+suggested.id);
+      if(d){ d.open = true; d.scrollIntoView({behavior:"smooth", block:"start"}); }
+    };
+    s.appendChild(b);
+    m.appendChild(s);
+  }
+
+  const list = el("div","panel");
+  CONFUSABLES.forEach(function(c){
+    const det = el("details","entry");
+    det.id = "gram-"+c.id;
+    const sum = el("summary");
+    sum.appendChild(el("span","headword", c.head));
+    sum.appendChild(el("span","pos", c.pos));
+    if((S.grammarDone||[]).indexOf(c.id) >= 0) sum.appendChild(el("span","seen","seen"));
+    det.appendChild(sum);
+
+    const body = el("div","body");
+    body.appendChild(el("div","rule-txt", c.rule));
+    body.appendChild(el("div","es-note", c.es));
+
+    const ul = el("ul","ex");
+    c.ex.forEach(function(e){
+      const li = el("li", e.ok ? "ok" : "no", e.t);
+      ul.appendChild(li);
+    });
+    body.appendChild(ul);
+
+    c.drills.forEach(function(dr, di){
+      const d = el("div","drill");
+      d.appendChild(el("div","q", dr.q.replace(/___/g,"<b>___</b>")));
+      const inp = el("input"); inp.type = "text"; inp.id = "gd-"+c.id+"-"+di;
+      inp.placeholder = "…"; inp.autocomplete = "off";
+      const fb = el("div","fb");
+      const btn = el("button","mini","check");
+      const check = function(){
+        const v = norm(inp.value);
+        if(!v) return;
+        const ok = dr.a.some(function(a){ return norm(a) === v; });
+        fb.className = "fb " + (ok ? "good" : "bad");
+        fb.textContent = ok ? "✓ Right." : "✗ " + dr.a[0];
+        if(ok){
+          if((S.grammarDone||[]).indexOf(c.id) < 0){
+            S.grammarDone = (S.grammarDone||[]).concat([c.id]);
+            if(!sum.querySelector(".seen")) sum.appendChild(el("span","seen","seen"));
+          }
+          markBlock("grammar");
+          save();
+        }
+      };
+      btn.onclick = check;
+      inp.addEventListener("keydown", function(e){ if(e.key==="Enter") check(); });
+      const row = el("div","row"); row.appendChild(inp); row.appendChild(btn);
+      d.appendChild(row); d.appendChild(fb);
+      body.appendChild(d);
+    });
+
+    det.appendChild(body);
+    list.appendChild(det);
+  });
+  m.appendChild(list);
+}
+
+/* ---------- INTERVIEW ---------- */
+function viewJob(m){
+  m.appendChild(el("div","eyebrow","your answers, out loud"));
+  m.appendChild(el("h2",null,"Interview"));
+  m.appendChild(el("p","lead","Estas respuestas salen de tu CV real: técnico SMR, la agencia inmobiliaria, el generador de contratos en Python, las prácticas en la Complutense. No las memorices palabra por palabra — léelas en voz alta hasta que te salgan solas y luego dilas sin mirar."));
+
+  const tip = el("div","panel");
+  tip.style.marginBottom = "20px";
+  tip.appendChild(el("div","eyebrow","how to use this"));
+  tip.appendChild(el("p",null,"<b>Listen</b> te la lee para que cojas el ritmo. Después dila tú, cronometrada. Si tardas mucho más que el tiempo indicado, estás traduciendo del español en tiempo real: acorta la respuesta antes que acelerar."));
+  m.appendChild(tip);
+
+  INTERVIEW.forEach(function(it, i){
+    const p = el("div","qa");
+    p.appendChild(el("div","q", escapeHtml(it.q)));
+    p.appendChild(el("div","a", escapeHtml(it.a).replace(/\n/g,"<br>")));
+    const row = el("div","row");
+    const hear = el("button","mini","▶ listen");
+    hear.onclick = function(){ say(it.a.replace(/\n/g,". "), 0.9); };
+    const stop = el("button","mini","stop");
+    stop.onclick = function(){ if("speechSynthesis" in window) speechSynthesis.cancel(); };
+    const timer = el("span","meta","target: "+it.s);
+    row.appendChild(hear); row.appendChild(stop); row.appendChild(timer);
+    p.appendChild(row);
+    m.appendChild(p);
+  });
+
+  m.appendChild(el("hr","rule"));
+  m.appendChild(el("div","eyebrow","never say this"));
+  const bad = el("ul","ex");
+  [
+    "I have <s>a good level</s> of English → I'd say I'm around B1 and improving. (concreto y honesto)",
+    "I'm <s>a person very responsible</s> → I'm a very responsible person. (adjetivo antes del nombre)",
+    "I <s>have</s> 24 years → I'<em>m</em> 24 years old.",
+    "<s>Actually</s> I work at an agency → <em>Currently</em> I work at an agency.",
+    "I <s>have finished</s> my degree last year → I <em>finished</em> my degree last year."
+  ].forEach(function(t){ bad.appendChild(el("li","no",t)); });
+  m.appendChild(bad);
+}
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+localLoad();
+paintStreak();
+buildNav();
+render();
+
+(async function(){
+  if(!window.claude || typeof window.claude.use !== "function") return;
+  try{
+    const db = await window.claude.use("db");
+    if(db){
+      dbRef = db.doc("progress/main");
+      const snap = await dbRef.get();
+      if(snap.exists){
+        const remote = snap.data() || {};
+        const localTotal = (S.dictDone||0)+(S.speakDone||0)+(S.writeDone||0);
+        const remoteTotal = (remote.dictDone||0)+(remote.speakDone||0)+(remote.writeDone||0);
+        if(remoteTotal >= localTotal){
+          S = Object.assign({}, DEF, remote);
+          localSave();
+          paintStreak();
+          render();
+        }else{
+          save();
+        }
+      }
+    }
+  }catch(e){}
+  try{
+    const s = await window.claude.use("sample");
+    if(s){ sampleFn = s; if(current==="write"||current==="speak") render(); }
+  }catch(e){}
+})();
+</script>
