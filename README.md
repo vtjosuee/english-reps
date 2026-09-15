@@ -2,7 +2,11 @@
 
 A daily English trainer I built for myself, to get from B1 to a solid B2 — the level almost every IT job advert in Madrid asks for.
 
+**Try it:** https://vtjosuee.github.io/english-reps/
+
 It is one self-contained HTML file. No build step, no dependencies, no framework.
+
+> **About your data.** There is no server and no account. Your progress and your streak are kept in your own browser's `localStorage`. Open the link above and you get a clean slate — nobody sees anybody else's practice, mine included.
 
 ## What is in it
 
